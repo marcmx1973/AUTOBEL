@@ -32,7 +32,7 @@ npm install
 
 ## Configuration des variables d'environnement Supabase
 
-Créez un fichier `.env` (ou `.env.local`) à la racine de `project 3` contenant :
+Un fichier `.env.example` est fourni dans `project 3`. Copiez-le en `.env` (ou `.env.local`) et renseignez les valeurs appropriées :
 
 ```
 VITE_SUPABASE_URL=<url fournie par Supabase>
@@ -56,3 +56,7 @@ supabase db reset
 ```
 
 Cette commande applique toutes les migrations et prépare la base pour l'application.
+
+## Licence
+
+Ce projet est distribué sous licence [MIT](LICENSE).
