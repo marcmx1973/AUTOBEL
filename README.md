@@ -65,3 +65,8 @@ supabase db reset
 ```
 
 Cette commande applique toutes les migrations et prépare la base pour l'application.
+
+## Licence
+
+Ce projet est distribué sous licence MIT. Consultez le fichier [LICENSE](LICENSE)
+pour plus de détails.
