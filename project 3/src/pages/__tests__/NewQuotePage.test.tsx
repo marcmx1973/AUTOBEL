@@ -1,7 +1,15 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import NewQuotePage from '../NewQuotePage';
+
+const mockFetchMasterData = vi.fn();
+const mockSaveRFQ = vi.fn();
+
+vi.mock('../../lib/supabase', () => ({
+  fetchMasterData: mockFetchMasterData,
+  saveRFQ: mockSaveRFQ
+}));
 
 // Helper function to render the component with router context
 const renderNewQuotePage = () => {
@@ -14,6 +22,21 @@ const renderNewQuotePage = () => {
 
 describe('NewQuotePage Layout Tests', () => {
   beforeEach(() => {
+    mockFetchMasterData.mockReset();
+    mockSaveRFQ.mockReset();
+    mockFetchMasterData.mockResolvedValue({
+      OEM: [],
+      PROGRAM: [],
+      CUSTOMER: [],
+      PROCESS: [],
+      'GROUP DIVISION': [],
+      SITE: [],
+      PLANT: [],
+      'EXISTING PROCESS': [],
+      DEPARTMENT: [],
+      ROLE: [],
+      STAKEHOLDER: []
+    });
     renderNewQuotePage();
   });
 
