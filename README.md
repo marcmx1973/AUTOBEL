@@ -30,6 +30,15 @@ cd "project 3"
 npm install
 ```
 
+## Avant les tests et le développement
+
+Assurez-vous d'installer les dépendances dans `project 3/` avant d'exécuter `npm run dev` ou `npm test`.
+
+```bash
+cd "project 3"
+npm install   # ou npm ci
+```
+
 ## Configuration des variables d'environnement Supabase
 
 Créez un fichier `.env` (ou `.env.local`) à la racine de `project 3` contenant :
