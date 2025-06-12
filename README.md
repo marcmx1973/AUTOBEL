@@ -25,6 +25,8 @@ AUTOBEL/
 
 ## Installation des dépendances
 
+Ce projet nécessite Node.js >= 20.
+
 ```bash
 cd "project 3"
 npm install
