@@ -304,17 +304,17 @@ export default function CapacityLoadAnalysis() {
       {selectedDivision && (
         <div className="bg-white rounded-lg shadow-sm p-6">
           <div className="relative overflow-x-auto">
-            <div className="sticky top-0 bg-white z-30">
+            <div className="overflow-y-auto" style={{ maxHeight: 'calc(100vh - 400px)' }}>
               <table className="w-full">
-                <thead className="bg-gray-50">
+                <thead className="sticky top-0 bg-white z-30 bg-gray-50">
                   <tr>
                     <th scope="col" className="sticky left-0 z-20 bg-gray-50 px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-[200px]">
                       Plant / Process
                     </th>
                     {weeklyLoads.map((week) => (
-                      <th 
-                        key={`${week.weekYear}-${week.weekNumber}`} 
-                        scope="col" 
+                      <th
+                        key={`${week.weekYear}-${week.weekNumber}`}
+                        scope="col"
                         className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-[140px]"
                       >
                         <div>Week {week.weekNumber}</div>
@@ -323,8 +323,8 @@ export default function CapacityLoadAnalysis() {
                         </div>
                       </th>
                     ))}
-                    <th 
-                      scope="col" 
+                    <th
+                      scope="col"
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-100 w-[140px]"
                     >
                       <div>Average</div>
@@ -332,11 +332,6 @@ export default function CapacityLoadAnalysis() {
                     </th>
                   </tr>
                 </thead>
-              </table>
-            </div>
-
-            <div className="overflow-y-auto" style={{ maxHeight: 'calc(100vh - 400px)' }}>
-              <table className="w-full">
                 <tbody className="bg-white divide-y divide-gray-200">
                   {filteredPlantProcesses.map((plantData) => (
                     plantData.processes.map((process, processIndex) => {
