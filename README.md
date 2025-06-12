@@ -43,7 +43,14 @@ npm install   # ou npm ci
 
 ## Configuration des variables d'environnement Supabase
 
-Créez un fichier `.env` (ou `.env.local`) à la racine de `project 3` contenant :
+Un exemple de fichier d'environnement est fourni dans `project 3/.env.example`.
+Copiez-le vers `.env` (ou `.env.local`) et renseignez vos clés Supabase :
+
+```bash
+cp .env.example .env
+```
+
+Puis ouvrez ce nouveau fichier et complétez les variables :
 
 ```
 VITE_SUPABASE_URL=<url fournie par Supabase>
