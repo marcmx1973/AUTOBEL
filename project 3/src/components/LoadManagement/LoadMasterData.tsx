@@ -4,6 +4,7 @@ import LoadingSpinner from '../common/LoadingSpinner';
 import ErrorMessage from '../../components/common/ErrorMessage';
 import { Pencil, Save, Trash2 } from 'lucide-react';
 import { fetchPlanningSteps, savePlanningStep, updatePlanningStep, deletePlanningStep } from '../../lib/supabase';
+import { generateUUID } from '../../utils/uuid';
 import type { PlanningStep } from '../../types';
 
 const TABS = [
@@ -48,7 +49,7 @@ export default function LoadMasterData() {
     setPlanningSteps(prev => [
       ...prev,
       {
-        id: crypto.randomUUID(), // Temporary ID
+        id: generateUUID(),
         name: '',
         role_in_charge: '',
         starting_step: 'BLU',
